@@ -16,14 +16,14 @@ jobs:
       #     docker run --rm returntocorp/semgrep:latest semgrep --help | tee src/components/reference/_cli-help-output.md
       #     sed -i '1i```' src/components/reference/_cli-help-output.md
       #     echo '```' >> src/components/reference/_cli-help-output.md
-      # - run: |
-      #     docker run --rm returntocorp/semgrep:latest semgrep scan --help | tee src/components/reference/_cli-help-scan-output.md
-      #     sed -i '1i```' src/components/reference/_cli-help-scan-output.md
-      #     echo '```' >> src/components/reference/_cli-help-scan-output.md
+      - run: |
+          echo '```' >> src/components/reference/_cli-help-scan-output.md
+          # docker run --rm returntocorp/semgrep:latest semgrep scan --help | tee src/components/reference/_cli-help-scan-output.md
+          # sed -i '1i```' src/components/reference/_cli-help-scan-output.md
       - run: |
           git config -l
-          # git config user.name sinat101
-          # git config user.email sina.taghiz@gmail.com
-          # git add .
-          # git commit -m "Updated help command output based on latest Semgrep release"
-          # git push
+          git config user.name sinat101
+          git config user.email sina.taghiz@gmail.com
+          git add .
+          git commit -m "Updated help command output based on latest Semgrep release"
+          git push
