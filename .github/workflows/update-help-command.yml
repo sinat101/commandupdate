@@ -17,6 +17,8 @@ jobs:
     steps:
       # Fetch project source with GitHub Actions Checkout.
       - uses: actions/checkout@v4
+      - run: |
+          docker run --rm returntocorp/semgrep:latest semgrep --help | tee src/components/reference/_cli-help-output.md
       # Run the "semgrep ci" command on the command line of the docker image.
       # - run: |
       #     semgrep --help | tee src/components/reference/_cli-help-output.md
@@ -30,7 +32,6 @@ jobs:
           pwd
           ls -la
       - run: |
-          git init
           git diff
           # git config user.name github-actions
           # git config user.email github-actions@github.com
