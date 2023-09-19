@@ -13,8 +13,8 @@ jobs:
     container:
       # A Docker image with Semgrep installed. Do not change this.
       image: returntocorp/semgrep:latest
-      volumes:
-        - ${PWD}:/src
+      # volumes:
+      #   - ${PWD}:/src
 
     steps:
       # Fetch project source with GitHub Actions Checkout.
