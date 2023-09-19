@@ -21,7 +21,7 @@ jobs:
       #     sed -i '1i```' src/components/reference/_cli-help-scan-output.md
       #     echo '```' >> src/components/reference/_cli-help-scan-output.md
       - run: |
-          - git config -l
+          git config -l
           # git config user.name sinat101
           # git config user.email sina.taghiz@gmail.com
           # git add .
