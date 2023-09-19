@@ -29,5 +29,5 @@ jobs:
           git config user.email sina.taghiz@gmail.com
           git add .
           git diff-index --quiet HEAD || \
-          git commit -m "Updated help command output based on latest Semgrep release" && \
+          git commit -m "Updated help command output based on latest Semgrep release"
           git push
