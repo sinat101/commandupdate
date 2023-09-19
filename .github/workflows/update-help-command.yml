@@ -2,7 +2,7 @@
 name: Update help command
 
 on:
-  workflow_dispatch: {}
+  repository_dispatch: {}
 
 jobs:
   update-output:
