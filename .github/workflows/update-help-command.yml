@@ -29,8 +29,11 @@ jobs:
           sed -i '1i```' src/components/reference/_cli-help-scan-output.md
           echo '```' >> src/components/reference/_cli-help-scan-output.md
       - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "Updated help command output based on latest Semgrep release"
-          git push
+          pwd
+          ls -la
+      # - run: |
+      #     git config user.name github-actions
+      #     git config user.email github-actions@github.com
+      #     git add .
+      #     git commit -m "Updated help command output based on latest Semgrep release"
+      #     git push
