@@ -18,8 +18,8 @@ jobs:
       #     echo '```' >> src/components/reference/_cli-help-output.md
       - run: |
           echo '```' >> src/components/reference/_cli-help-scan-output.md
-          # docker run --rm returntocorp/semgrep:latest semgrep scan --help | tee src/components/reference/_cli-help-scan-output.md
-          # sed -i '1i```' src/components/reference/_cli-help-scan-output.md
+#          docker run --rm returntocorp/semgrep:latest semgrep scan --help | tee src/components/reference/_cli-help-scan-output.md
+#          sed -i '1i```' src/components/reference/_cli-help-scan-output.md
       - run: |
           git config -l
           git config user.name sinat101
