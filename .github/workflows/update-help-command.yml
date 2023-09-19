@@ -10,24 +10,22 @@ jobs:
     name: Update `--help` and `--help scan` command output 
     runs-on: ubuntu-latest
 
-    container:
-      # A Docker image with Semgrep installed. Do not change this.
-      image: returntocorp/semgrep:latest
-      # volumes:
-      #   - ${PWD}:/src
+    # container:
+    #   # A Docker image with Semgrep installed. Do not change this.
+    #   image: returntocorp/semgrep:latest
 
     steps:
       # Fetch project source with GitHub Actions Checkout.
       - uses: actions/checkout@v4
       # Run the "semgrep ci" command on the command line of the docker image.
-      - run: |
-          semgrep --help | tee src/components/reference/_cli-help-output.md
-          sed -i '1i```' src/components/reference/_cli-help-output.md
-          echo '```' >> src/components/reference/_cli-help-output.md
-      - run: |
-          semgrep scan --help | tee src/components/reference/_cli-help-scan-output.md
-          sed -i '1i```' src/components/reference/_cli-help-scan-output.md
-          echo '```' >> src/components/reference/_cli-help-scan-output.md
+      # - run: |
+      #     semgrep --help | tee src/components/reference/_cli-help-output.md
+      #     sed -i '1i```' src/components/reference/_cli-help-output.md
+      #     echo '```' >> src/components/reference/_cli-help-output.md
+      # - run: |
+      #     semgrep scan --help | tee src/components/reference/_cli-help-scan-output.md
+      #     sed -i '1i```' src/components/reference/_cli-help-scan-output.md
+      #     echo '```' >> src/components/reference/_cli-help-scan-output.md
       - run: |
           pwd
           ls -la
