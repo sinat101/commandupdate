@@ -35,7 +35,7 @@ jobs:
           echo '```' >> src/components/reference/_cli-help-scan-output.md
       - name: Commit changes, if any
         run: |
-            if $(git diff-index --quiet HEAD); then
+            if $(git diff --quiet); then
               echo "No changes made, exiting."
             else
               echo "Committing changes."
