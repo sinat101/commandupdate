@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Checkout new branch named based on latest tag
         run: |
-          LATEST_TAG=$(gh release view -R returntocorp/semgrep --json tagName -q .tagName)
+          echo "LATEST_TAG=$(gh release view -R returntocorp/semgrep --json tagName -q .tagName)" >> $GITHUB_ENV
           git checkout -b update_help_commands_$LATEST_TAG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,7 +41,7 @@ jobs:
               git config user.email github-actions@github.com
               git add .
               git commit -m "Updated help command output based on latest Semgrep release"
-              git push --set-upstream origin
+              git push --set-upstream origin update_help_commands_$LATEST_TAG
               gh pr create --title "Update help command output for Semgrep $LATEST_TAG" --body "This is an automatically generated PR"
             fi
         env:
