@@ -19,7 +19,9 @@ jobs:
       - name: Checkout new branch named based on latest tag
         run: |
           LATEST_TAG=$(gh release view -R returntocorp/semgrep --json tagName -q .tagName)
-          git checkout -b update_help_commands_$LATEST_TAG 
+          git checkout -b update_help_commands_$LATEST_TAG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Run `semgrep --help` and update reference file with output
         run: |
           docker run --rm returntocorp/semgrep:latest semgrep --help | tee src/components/reference/_cli-help-output.md
