@@ -42,4 +42,6 @@ jobs:
               git push
               gh pr create --title "Update help command output for Semgrep $LATEST_TAG" --body "This is an automatically generated PR"
             fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
