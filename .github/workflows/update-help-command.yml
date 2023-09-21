@@ -2,11 +2,8 @@
 name: Update help command
 
 on:
-  workflow_dispatch: {}
-
-# on:
-#   repository_dispatch:
-#     types: [new_release]
+  repository_dispatch:
+    types: [new_release]
 
 jobs:
   update-output:
