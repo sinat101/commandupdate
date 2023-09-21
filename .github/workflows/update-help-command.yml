@@ -41,7 +41,7 @@ jobs:
               git config user.email github-actions@github.com
               git add .
               git commit -m "Updated help command output based on latest Semgrep release"
-              git push
+              git push --set-upstream origin update_help_commands_$LATEST_TAG
               gh pr create --title "Update help command output for Semgrep $LATEST_TAG" --body "This is an automatically generated PR"
             fi
         env:
