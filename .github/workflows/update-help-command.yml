@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Checkout new branch named based on latest tag
         run: |
+          LATEST_TAG=$(gh release view -R returntocorp/semgrep --json tagName -q .tagName)
           echo "LATEST_TAG=$(gh release view -R returntocorp/semgrep --json tagName -q .tagName)" >> $GITHUB_ENV
           git checkout -b update_help_commands_$LATEST_TAG
         env:
